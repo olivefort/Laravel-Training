@@ -1,0 +1,1 @@
+voici la page discussion {{ $user }}
