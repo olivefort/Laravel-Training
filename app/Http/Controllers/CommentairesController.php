@@ -24,7 +24,9 @@ class CommentairesController extends Controller
      */
     public function create($article_id)
     {
-        return view('commentaires.create', compact('article_id'));
+        // return view('commentaires.create', compact('article_id'));
+        //Option : Vu que create et edit font etroitement les même chose, on va créer la même vue pour les 2 : 
+        return view('commentaires.union', compact('article_id'));
     }
 
     /**
@@ -35,7 +37,11 @@ class CommentairesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $commentaire = new Commentaire;
+        $commentaire->article_id = $request->article_id;
+        $commentaire->commentaire = $request->commentaire;
+        $commentaire->save();
+        return redirect()->route('form.show', ['form'=> $commentaire->article_id]);
     }
 
     /**
@@ -58,7 +64,9 @@ class CommentairesController extends Controller
      */
     public function edit(Commentaire $commentaire)
     {
-        return view('commentaires.edit', compact('commentaire'));
+        // return view('commentaires.edit', compact('commentaire'));
+        //Option : la même vue que create
+        return view('commentaires.union', compact('commentaire'));
     }
 
     /**

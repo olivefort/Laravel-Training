@@ -74,7 +74,8 @@ class TagsController extends Controller
         $tag = Tag::findOrFail($id);
         $tag->mot = $request->mot;
         $tag->save();
-        return redirect()->route('tags.index');
+        return redirect()->route('form.show', ['form'=> $tag->article_id]);
+        // return redirect()->route('tags.index');
     }
 
     /**

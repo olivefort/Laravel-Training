@@ -11,7 +11,7 @@
 						<li>
 							<a href="{{ route('form.show',['form'=>$article->id]) }}">Voir</a> 
 							<a href="{{ route('form.edit',['form'=>$article->id]) }}">Modifier</a> 
-							{{ $article->titre }}</li>
+							{{ $article->titre }}({{ $article->commentaires->count() }})({{ $article->tags->count() }})</li>
 					@endforeach
 				</ul>
 				<a href="{{ route('form.create') }}">Publier un nouvel article</a>

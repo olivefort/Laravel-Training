@@ -4,7 +4,7 @@
     <br>
 	<div class="col-sm-offset-3 col-sm-6">
 		<div class="panel panel-info">
-			<div class="panel-heading">Modification de l'articles</div>
+			<div class="panel-heading">Modification de l'article</div>
 			<div class="panel-body"> 
 				{!! Form::open(['route' => ['form.update',$article->id]]) !!}
                 @method('PUT')

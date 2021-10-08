@@ -4,7 +4,7 @@
     <br>
 	<div class="col-sm-offset-3 col-sm-6">
 		<div class="panel panel-info">
-			<div class="panel-heading">Articles</div>
+			<div class="panel-heading">Nouvel article</div>
 			<div class="panel-body"> 
 				{!! Form::open(['route' => 'form.store']) !!}
 					<div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!}">

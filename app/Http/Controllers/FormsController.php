@@ -55,6 +55,7 @@ class FormsController extends Controller
     {
         $article = Article::find($id);
         return view('forms.show', compact('article'));
+        //ici on a stocké dans la variable $article les données d'un article en fonction de son id que l'on renvois à la vue show.blade.php en compact 'article'
     }
 
     /**

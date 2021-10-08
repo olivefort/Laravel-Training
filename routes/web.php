@@ -161,3 +161,4 @@ Route::resource('tags', TagsController::class);
 Route::resource('commentaires', CommentairesController::class)->except('index','destroy','show');
 //Pour creer un commentaire d'un article bien précis on est obligé de creer une route un peu plus précise en ajoutant l'id de l'article sur la fin. 
 Route::get('commentaires/create/{article_id}', [CommentairesController::class, 'create'])->name('commentaires.create');
+
