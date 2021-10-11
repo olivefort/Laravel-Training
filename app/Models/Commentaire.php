@@ -11,4 +11,8 @@ class Commentaire extends Model
     public function article(){
         return $this->belongsTo('App\Models\Article');
     }
+    protected $fillable = [
+        'article_id',
+        'commentaire',
+    ];
 }

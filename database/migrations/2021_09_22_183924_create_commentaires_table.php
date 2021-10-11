@@ -15,7 +15,9 @@ class CreateCommentairesTable extends Migration
     {
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('article_id')->unsigned();
+            // $table->bigInteger('article_id')->unsigned();
+            //nouvelle écriture des FK :
+            $table->foreignId('article_id');
             $table->text('commentaire');
             $table->timestamps();
         });

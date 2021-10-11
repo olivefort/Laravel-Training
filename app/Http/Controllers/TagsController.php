@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Models\Article;
 
 class TagsController extends Controller
 {
@@ -56,10 +57,11 @@ class TagsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $tag, $article)
     {
-        $tag = Tag::findOrFail($id);
-        return view('tags.edit', compact('tag'));
+        $articles = Article::findOrFail($article);
+        $tags = Tag::findOrFail($tag);
+        return view('tags.edit', compact('tags','articles'));
     }
 
     /**
@@ -69,13 +71,13 @@ class TagsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $tag, $article)
     {
-        $tag = Tag::findOrFail($id);
-        $tag->mot = $request->mot;
-        $tag->save();
-        return redirect()->route('form.show', ['form'=> $tag->article_id]);
-        // return redirect()->route('tags.index');
+        $tags = Tag::findOrFail($tag);
+        $articles = Article::findOrFail($article);
+        $tags->mot = $request->mot;
+        $tags->save();
+        return redirect()->route('form.show', ['form'=>$articles->id]);
     }
 
     /**

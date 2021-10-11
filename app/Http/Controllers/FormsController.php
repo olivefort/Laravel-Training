@@ -15,8 +15,8 @@ class FormsController extends Controller
      */
     public function index()
     {
-        $bitenbois = Article::all();
-        return view('forms.index', compact('bitenbois'));
+        $articles = Article::all();
+        return view('forms.index', compact('articles'));
     }
 
     /**

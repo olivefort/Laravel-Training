@@ -22,9 +22,9 @@ class CreateMembersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password',150);
             $table->date('ddn');
-            $table->integer('tel',10);
+            $table->string('tel',10);
             $table->string('adresse',150);
-            $table->integer('CP',5);
+            $table->string('CP',5);
             $table->string('ville',100);
             $table->boolean('admin');
             $table->string('avatar',100);

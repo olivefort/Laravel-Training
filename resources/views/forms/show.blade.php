@@ -28,7 +28,7 @@
 				<p>Les Tags</p>
 				<ul>
 					@foreach ($article->tags as $tag)
-						<li>{{ $tag->mot }} <a href="{{ route('tags.edit',['tag'=>$tag->id])}}">Modifier ce tag</a></li>						
+						<li>{{ $tag->mot }} <a href="{{ route('tags.edit',['tag'=>$tag->id, 'article'=>$article->id]) }}">Modifier ce tag</a></li>						
 					@endforeach
 				</ul>
 

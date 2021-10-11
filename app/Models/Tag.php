@@ -11,4 +11,7 @@ class Tag extends Model
     public function articles(){
         return $this->belongToMany('App\Models\Article');
     }
+    protected $fillable = [
+        'mot',
+    ];
 }
